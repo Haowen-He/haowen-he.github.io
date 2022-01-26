@@ -24,6 +24,13 @@ Institute for Data Exploration and Application, Rensselaer Polytechnic Institute
 <i>Advisor: Dr. Kristin Bennett, Dr. John Erickson</i>
 <br>
 
+<br> 
+<b>[Ice Hockey Data Analytics](http://haowen-math.com/publications/2009-10-01-paper-title-number-6)</b> <br>
+Institute for Data Exploration and Application, Rensselaer Polytechnic Institute
+<br>
+<i>Advisor: Dr. Thomas Morgan</i>
+<br>
+
 <br>
 <b>[Let’s make a deal: The Monty Hall Dilemma Revisited](http://haowen-math.com/publications/2015-10-01-paper-title-number-3)</b> <br>
 Department of Cognitive Science, Rensselaer Polytechnic Institute
