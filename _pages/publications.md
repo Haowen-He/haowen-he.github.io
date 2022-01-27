@@ -25,7 +25,7 @@ Institute for Data Exploration and Application, Rensselaer Polytechnic Institute
 <br>
 
 <br> 
-<b>[Ice Hockey Data Analytics](http://haowen-math.com/publications/2009-10-01-paper-title-number-6)</b> <br>
+<b>[Analysis of sports image detection technology based on machine learning](http://haowen-math.com/publications/2009-10-01-paper-title-number-6)</b> <br>
 Institute for Data Exploration and Application, Rensselaer Polytechnic Institute
 <br>
 <i>Advisor: Dr. Thomas Morgan</i>
