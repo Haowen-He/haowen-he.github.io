@@ -11,7 +11,7 @@ date: 2022-5-09
 </p>
 
 <p align="center">
-    <img src="https://haowen-he.github.io/images/ezgif-2-61b522a4c4.gif" alt="Photo" width="85%">
+    <img src="https://haowen-he.github.io/images/ezgif-2-80d53b86df.gif" alt="Photo" width="90%">
 </p>
 
 ## Descriptions
