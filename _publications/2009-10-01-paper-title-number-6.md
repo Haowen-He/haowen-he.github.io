@@ -7,6 +7,10 @@ date: 2022-5-09
 ---
 
 <p align="center">
+  <img src="https://haowen-he.github.io/images/ezgif-5-8473362d07.gif" alt="Photo" width="90%">
+</p>
+
+<p align="center">
   <img alt="Light" src="https://haowen-he.github.io/images/Screen Shot 2022-01-26 at 1.13.49 PM.png" width="45%">
 &nbsp; &nbsp; 
   <img alt="Dark" src="https://haowen-he.github.io/images/Screen Shot 2022-01-26 at 1.13.29 PM.png" width="45%">
