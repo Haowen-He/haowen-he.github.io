@@ -13,7 +13,7 @@ date: 2022-5-09
 <p align="center">
   <img alt="Light" src="https://haowen-he.github.io/images/Screen Shot 2022-01-26 at 1.13.49 PM.png" width="5%">
 &nbsp; &nbsp; 
-    <img src="https://haowen-he.github.io/images/ezgif-2-61b522a4c4.gif" alt="Photo" width="45%">
+    <img src="https://haowen-he.github.io/images/ezgif-2-61b522a4c4.gif" alt="Photo" width="85%">
 &nbsp; &nbsp; 
   <img alt="Dark" src="https://haowen-he.github.io/images/Screen Shot 2022-01-26 at 1.13.29 PM.png" width="5%">
 </p>
