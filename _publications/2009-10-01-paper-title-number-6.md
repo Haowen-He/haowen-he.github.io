@@ -11,7 +11,11 @@ date: 2022-5-09
 </p>
 
 <p align="center">
+  <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="showcase gif" width="25%"> 
+  &nbsp; &nbsp; 
     <img src="https://haowen-he.github.io/images/ezgif-2-ae39a85f44.gif" alt="Photo" width="30%">
+  &nbsp; &nbsp; 
+  <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="showcase gif" width="25%"> 
 </p>
 
 ## Descriptions
