@@ -15,7 +15,7 @@ date: 2022-5-09
   &nbsp; &nbsp; 
     <img src="https://haowen-he.github.io/images/ezgif-2-ae39a85f44.gif" alt="Photo" width="30%">
   &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="showcase gif" width="25%"> 
+  <img src="https://haowen-he.github.io/images/Screen Shot 2022-01-26 at 1.13.29 PM.png" alt="showcase gif" width="25%"> 
 </p>
 
 ## Descriptions
