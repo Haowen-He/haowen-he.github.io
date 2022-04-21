@@ -35,7 +35,7 @@
   }
 
   h3, h4 {
-    font-size: $type-size-3;
+    font-size: $type-size-5;
   }
 
   p, li {
@@ -114,7 +114,7 @@
   margin-bottom: 10px;
   color: $link-color;
   font-weight: bold;
-  font-size: 300%;
+  font-size: 2em;
 
   @include breakpoint($large) {
     margin-top: 10px;
