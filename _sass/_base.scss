@@ -111,15 +111,15 @@ blockquote {
 
 /* links */
 
-a {
-  &:focus {
-    @extend %tab-focus;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
+a:link {
+  color: $text-color;
+  background-color: transparent;
+  border-bottom: 1px solid #16B1B5;
+}
+a:hover {
+  color: $text-color;
+  background-color: #16B1B5;
+  text-decoration: none;
 }
 
 /* code */
