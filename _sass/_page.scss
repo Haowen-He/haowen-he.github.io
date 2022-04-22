@@ -75,8 +75,7 @@
   a {
     color: $text-color;
     text-decoration: none;
-    border-bottom-style: solid;
-    border-bottom-color: #16B1B5;
+    border-bottom: 4px dotted #16B1B5;
 
     &:hover {
       color: $text-color;
