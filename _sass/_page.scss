@@ -75,7 +75,8 @@
   a {
     color: $text-color;
     text-decoration: underline;
-    text-decoration-thickness: 5px;
+    text-decoration-color: #16B1B5;
+    text-decoration-thickness: 3px;
 
     &:hover {
       color: $text-color;
