@@ -12,4 +12,5 @@ redirect_from:
   <img src="https://haowen-he.github.io/images/x_z.gif" alt="Databay showcase gif" width="56%">
 </p>
 
+<h2>This is heading 2</h2>
 
