@@ -86,7 +86,7 @@ author:
   location         : "Troy, NY"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "https://scholar.google.com"
+  googlescholar    : /files/HeHaowen-CV.pdf
   email            : "heh4@rpi.edu"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
