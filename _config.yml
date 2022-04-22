@@ -88,7 +88,7 @@ author:
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : /files/HeHaowen-CV.pdf
   email            : "heh4@rpi.edu"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net"
   uri              : "https://scholar.google.com"
   bitbucket        :
   codepen          :
