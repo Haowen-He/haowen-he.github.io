@@ -73,10 +73,9 @@
   }
 
   a {
-    color: $text-color;
     text-decoration: underline;
     text-decoration-color: #16B1B5;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 2px;
 
     &:hover {
       color: $text-color;
