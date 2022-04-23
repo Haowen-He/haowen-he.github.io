@@ -14,7 +14,7 @@ redirect_from:
 
 I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. Harry McLaughlin](https://science.rpi.edu/mathematical-sciences/faculty/harry-mclaughlin) and [Dr. Elizabeth Kam](https://science.rpi.edu/mathematical-sciences/faculty/elizabeth-kam). Currently, I'm a research assistant at the [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with the [Darrin Fresh Water Institute](https://dfwi.rpi.edu) and the [Jefferson Project at Lake George](https://jeffersonproject.rpi.edu).
 
-My current research interests are in <b><font color='#16B1B5'>data-driven modeling in mathematical biology</font><b/> and <b><font color='#16B1B5'>data science applications</font><b/>. My work pursues developing mathematical and computational approaches to study biological phenomena and systems. 
+My current research interests are in <b><font color='#16B1B5'>data-driven modeling in mathematical biology</font></b> and <b><font color='#16B1B5'>data science applications</font></b>. My work pursues developing mathematical and computational approaches to study biological phenomena and systems. 
 
 
   <h2>Watershed Forest Studies</h2>
