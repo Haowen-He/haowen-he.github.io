@@ -17,4 +17,3 @@ redirect_from:
 <b>My current research interests are in </b><b><font color='#16B1B5'>data-driven modeling in mathematical biology</font></b> <b>and</b> <b><font color='#16B1B5'>data science applications</font></b>. <b>My work pursues developing mathematical and computational approaches to study biological phenomena and systems.</b> 
 
 
-  <h2>Watershed Forest Studies</h2>
