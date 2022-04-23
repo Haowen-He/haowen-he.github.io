@@ -16,3 +16,5 @@ I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathemat
 
 My current research interests are in <b><font color='#16B1B5'>data-driven modeling in mathematical biology</font><b/> and <b><font color='#16B1B5'>data science applications</font><b/>. My work pursues developing mathematical and computational approaches to study biological phenomena and systems. 
 
+
+  <h2>Watershed Forest Studies</h2>
