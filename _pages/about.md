@@ -12,5 +12,5 @@ redirect_from:
   <img src="https://haowen-he.github.io/images/x_z.gif" alt="Databay showcase gif" width="56%">
 </p>
 
-I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu).
+I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. Harry McLaughlin](https://science.rpi.edu/mathematical-sciences/faculty/harry-mclaughlin) and [Dr. Elizabeth Kam](https://science.rpi.edu/mathematical-sciences/faculty/elizabeth-kam). Currently, I'm a research assistant at [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with [Darrin Fresh Water Institute](https://dfwi.rpi.edu). 
 
