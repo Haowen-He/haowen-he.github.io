@@ -12,5 +12,5 @@ redirect_from:
   <img src="https://haowen-he.github.io/images/x_z.gif" alt="Databay showcase gif" width="56%">
 </p>
 
-<h3>I'm a graduate student of <b>[Applied Mathematics](https://science.rpi.edu/mathematical-sciences)</b> at [Rensselaer Polytechnic Institute](https://www.rpi.edu).</h3>
+<h3>I'm a graduate student of <b>[app](https://inciteprojects.idea.rpi.edu/apps/safecampus/)</b> at [Rensselaer Polytechnic Institute](https://www.rpi.edu).</h3>
 
