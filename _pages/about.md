@@ -24,7 +24,7 @@ redirect_from:
 
 <img src="https://haowen-he.github.io/images/4th.gif" width="36%" align="right" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
 
-<img src="https://haowen-he.github.io/images/Screen Shot 2022-04-24 at 5.22.40 AM.png" width="36%" align="right" /> My work in this realm has been adapting machine learning tools to improve the performance of individual tree segmentation algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.
+<img src="https://haowen-he.github.io/images/Screen Shot 2022-04-24 at 5.29.08 AM.png" width="36%" align="right" /> My work in this realm has been adapting machine learning tools to improve the performance of individual tree segmentation algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.<p> abc</p>
 
 
 
