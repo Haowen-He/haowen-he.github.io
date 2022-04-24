@@ -22,5 +22,5 @@ redirect_from:
 
 <h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
 
-<img src="https://haowen-he.github.io/images/4th.gif" width="35%" align="right" /> The project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
+<img src="https://haowen-he.github.io/images/4th.gif" width="35%" align="right" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. The project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
 
