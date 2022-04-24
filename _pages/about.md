@@ -20,4 +20,4 @@ redirect_from:
 </p>
 
 
-<h2>Watershed Forest Studies: Tree Crown Segmentation from LiDAR</h2>
+<h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
