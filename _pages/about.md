@@ -23,7 +23,6 @@ redirect_from:
 <h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
 
 <p align="center">
-  Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR    Point Clouds Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds
-  &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/Picture2.gif" alt="showcase gif" width="25%">
+  <IMG SRC="https://haowen-he.github.io/images/Picture2.gif" alt="showcase gif" ALIGN=”right” /> Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR    Point Clouds Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds
 </p>
+
