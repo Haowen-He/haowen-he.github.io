@@ -22,5 +22,5 @@ redirect_from:
 
 <h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
 
-<img src="https://haowen-he.github.io/images/3rd.gif" width = "20%" align="right" /> Your text goes here.
+<img src="https://haowen-he.github.io/images/4th.gif" align="right" /> Your text goes here.
 
