@@ -32,7 +32,7 @@ redirect_from:
 <br>
 <h2>Modeling and Forecasting Cyanobacterial Harmful Algal Blooms (CyanoHABs) in a changing climate</h2>
 
-<img src="https://haowen-he.github.io/images/4th.gif" width="32%" align="left" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
+<img src="https://haowen-he.github.io/images/4th.gif" width="32%" align="left" hspace=”10”/> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
 
 <img src="https://haowen-he.github.io/images/Screen Shot 2022-04-25 at 4.20.15 AM.png" width="32%" align="left" /> My work in this realm has been adapting machine learning tools to improve the performance of tree top detection and crown outlining algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.<br>
 
