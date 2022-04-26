@@ -33,7 +33,7 @@ redirect_from:
 <h2>Modeling and Forecasting Cyanobacterial Harmful Algal Blooms (CyanoHABs) in a changing climate</h2>
 
 
-<p align="left"><img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="" width="32%" /> An Oak and a Reed were arguing... </p>
+<p align="left"><img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="" width="32%" /> Cyanobacterial harmful algal blooms, also referred to as blue-green algae, are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p>
 
 
 <p align="left"><img src="https://haowen-he.github.io/images/Rplot 4.06.27 PM.png?raw=true" alt="" width="32%" /> An Oak and a Reed were arguing... </p><br>
