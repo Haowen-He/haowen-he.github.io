@@ -36,7 +36,7 @@ redirect_from:
 <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="" width="32%" align="left" /> Cyanobacterial harmful algal blooms, also referred to as blue-green algae, are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br>
 
 
-<img src="https://haowen-he.github.io/images/Rplot 4.06.27 PM.png?raw=true" alt="" width="32%" align="left" /> <p>margin-right: 150px; I'm interested in modeling factors that contribute to Ccanobacterial harmful algal blooms using statistics & data science  techniques. </p> <br>
+<img src="https://haowen-he.github.io/images/Rplot 4.06.27 PM.png?raw=true" alt="" width="32%" align="left" />
 
 <br>
 <b> Supervised by [Dr. Thomas Morgan](https://idea.rpi.edu/people/staff/tom-morgan).</b>
