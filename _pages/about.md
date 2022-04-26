@@ -37,11 +37,11 @@ redirect_from:
 <br>
 
 <p align="center">
-  <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="showcase gif" width="25%"> 
+  <img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="showcase gif" width="30%"> 
   &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/Rplot 4.06.27 PM.png?raw=true" alt="Photo" width="30%"> 
+  <img src="https://haowen-he.github.io/images/Screen Shot 2022-04-26 at 5.53.03 AM.png" alt="Photo" width="30%"> 
   &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/Picture2.gif" alt="showcase gif" width="25%">
+  <img src="https://haowen-he.github.io/images/Picture2.gif" alt="showcase gif" width="30%">
 </p>
 
 <b> Supervised by [Dr. Thomas Morgan](https://idea.rpi.edu/people/staff/tom-morgan).</b>
