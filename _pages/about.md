@@ -30,7 +30,7 @@ redirect_from:
 <b> Supervised by [Dr. Thomas Morgan](https://idea.rpi.edu/people/staff/tom-morgan).</b>
 <br>
 <br>
-<h2>Modeling and Forecasting Cyanobacterial Harmful Algal Blooms</h2>
+<h2>Modeling and Forecasting Cyanobacterial Harmful Algal Blooms (CyanoHABs)in a changing climate</h2>
 
 <img src="https://haowen-he.github.io/images/4th.gif" width="36%" align="left" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
 
