@@ -42,6 +42,6 @@ redirect_from:
   <img src="https://haowen-he.github.io/images/Screen Shot 2022-04-26 at 5.53.33 AM.png" alt="showcase gif" width="30%">
 </p>
 
-<b> Supervised by [Dr. Thomas Morgan](https://idea.rpi.edu/people/staff/tom-morgan).</b>
+<b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
 
 
