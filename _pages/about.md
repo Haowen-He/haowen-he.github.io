@@ -60,5 +60,5 @@ redirect_from:
 <br>
 <h2>Teaching</h2>
 
-<b>[Fall 2021 MATH 1010](http://haowen-math.com/teaching/2015-spring-teaching-1)</b> Calculus I
+<b>[Fall 2021 MATH 1010](http://haowen-math.com/teaching/2015-spring-teaching-1) Calculus I</b>
   
