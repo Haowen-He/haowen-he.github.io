@@ -53,6 +53,6 @@ redirect_from:
 <br>
 <h2>Player Tracking and Identification in Ice Hockey</h2>
 
-<img src="https://haowen-he.github.io/images/ezgif-2-ae39a85f44.gif" width="36%" align="right" /> Video frames from on-ice action are analyzed in a time sequential manner to track the motion of players during a short to medium duration of action. Individual player silhouettes are identified and isolated for further analysis. Multi-player combined silhouettes are decomposed to isolate the individual players in the group and thus track players into and out of close contact situations. The ensemble of player tracks will be formed into a multi-channel time series for further exploration.<br>
+<img src="https://haowen-he.github.io/images/ezgif-2-ae39a85f44.gif" width="36%" align="right" /> Video frames from on-ice action are analyzed in a time sequential manner to track the motion of players during a short to medium duration of action. Individual player silhouettes are identified and isolated for further analysis. Multi-player combined silhouettes are decomposed to isolate individual players in the group and thus track players into and out of close contact situations. The ensemble of player tracks will be formed into a multi-channel time series for further exploration.<br>
 
 <b> Supervised by [Dr. Thomas Morgan](https://idea.rpi.edu/people/staff/tom-morgan).</b>
