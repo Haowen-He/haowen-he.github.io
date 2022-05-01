@@ -46,7 +46,7 @@ redirect_from:
 <br>
 <h2>Health INCITE: COVID-19 Contact Tracing and Campus Network Mapping</h2>
 
-<img src="https://haowen-he.github.io/images/Screen Shot 2021-07-14 at 3.39.21 AM.png?raw=true" width="36%" align="right" /> RPI StudySafe is a web-based visualization tool that presents WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.
+<img src="https://haowen-he.github.io/images/Screen Shot 2021-07-14 at 3.39.21 AM.png?raw=true" width="36%" align="right" /> RPI StudySafe is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.
 
 <img src="https://haowen-he.github.io/images/Screen Shot 2022-04-25 at 4.20.15 AM.png" width="36%" align="right" /> My work in this realm has been adapting machine learning tools to improve the performance of tree top detection and crown outlining algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.<br>
 
