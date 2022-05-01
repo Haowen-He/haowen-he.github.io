@@ -44,7 +44,7 @@ redirect_from:
 <b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
 <br>
 <br>
-<h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
+<h2>Data INCITE: COVID-19 Contact Tracing and Campus Network Mapping</h2>
 
 <img src="https://haowen-he.github.io/images/Screen Shot 2021-07-14 at 3.39.21 AM.png?raw=true" width="36%" align="right" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
 
