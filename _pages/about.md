@@ -42,10 +42,8 @@ redirect_from:
 <p><img src="https://haowen-he.github.io/images/filenamehere.gif?raw=true" alt="" width="32%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br> <br> I'm interested in modeling factors that contribute to CyanoHABs using statistics & data science techniques.</p><br>
 
 <b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
-
 <br>
 <br>
-
 <h2>Watershed Forest Studies: Tree Crown Segmentation from Airborne LiDAR Point Clouds</h2>
 
 <img src="https://haowen-he.github.io/images/4th.gif" width="36%" align="right" /> The correct segmentation of individual trees in the forest is necessary for extracting additional information about trees, such as the type of tree and other tree parameters. This project will support tree species identification in the Lake George watershed as part of an ongoing project to locate and study the impact of Hemlock Woolley Adelgid, an invasive species, on trees around the lake. 
