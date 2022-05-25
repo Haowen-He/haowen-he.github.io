@@ -70,5 +70,5 @@ redirect_from:
 <br>
 <h2>Miscellany</h2>
 
-<b>In Fall 2022, I'm a teaching assistant for <b><br>
+<img src="https://haowen-he.github.io/images/Screen Shot 2022-05-25 at 1.32.46 PM.png" width="36%" align="right" /> My work in this realm has been adapting machine learning tools to improve the performance of tree top detection and crown outlining algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.<br>
   
