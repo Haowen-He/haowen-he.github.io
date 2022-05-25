@@ -70,5 +70,5 @@ redirect_from:
 <br>
 <h2>Miscellany</h2>
 
-<img src="https://haowen-he.github.io/images/Screen Shot 2022-05-25 at 1.32.46 PM.png" width="36%" align="right" /> My work in this realm has been adapting machine learning tools to improve the performance of tree top detection and crown outlining algorithms in challenging forest conditions: mixedwood stands with vertically complex crown structures.<br>
+<img src="https://haowen-he.github.io/images/Screen Shot 2022-05-25 at 1.32.46 PM.png" width="36%" align="right" /> In past years, I was an undergraduate writing tutor at [the Center for Global Communication+Design (Comm+D)](https://info.rpi.edu/comm-d) and participated in the Language and Culture Support program for non-native English-speaking students. More recently, I was also a member of [I-PERSIST](https://success.studentlife.rpi.edu/first-year-experience/leadership-opportunities/i-persist-mentoring-chemistry-calculus-and-physics) advocate at RPI.<br>
   
