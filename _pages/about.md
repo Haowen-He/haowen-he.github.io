@@ -66,4 +66,9 @@ redirect_from:
 <b>[Spring 2021 MATH 1010](https://lms.rpi.edu)</b> Calculus I<br>
 <b>[Fall 2020 MATH 1010](https://lms.rpi.edu)</b> Calculus I<br>
 <b>[Fall 2019 MATH 1010](https://lms.rpi.edu)</b> Calculus I<br>
+<br>
+<br>
+<h2>Miscellany</h2>
+
+<b>In Fall 2022, I'm a teaching assistant for <b><br>
   
