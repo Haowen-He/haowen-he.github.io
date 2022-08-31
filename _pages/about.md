@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-<b>I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. Harry McLaughlin](https://science.rpi.edu/mathematical-sciences/faculty/harry-mclaughlin) and [Dr. Elizabeth Kam](https://science.rpi.edu/mathematical-sciences/faculty/elizabeth-kam). Currently, I'm a research assistant at the [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with the [Darrin Fresh Water Institute](https://dfwi.rpi.edu) and the [Jefferson Project at Lake George](https://jeffersonproject.rpi.edu).</b> 
+<b>I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. John Mitchell](https://science.rpi.edu/mathematical-sciences/faculty/john-e-mitchell) and [Dr. Kristin Bennett](https://science.rpi.edu/mathematical-sciences/faculty/kristin-bennett). Currently, I'm a research assistant at the [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with the [Darrin Fresh Water Institute](https://dfwi.rpi.edu).</b> 
 
 <b>My current research interests are in </b><b><font color='#16B1B5'>data-driven modeling in mathematical biology</font></b> <b>and</b> <b><font color='#16B1B5'>data science applications</font></b>. <b>My work pursues developing mathematical and computational approaches to study biological phenomena and systems.</b> 
 
@@ -60,7 +60,7 @@ redirect_from:
 <br>
 <h2>Teaching</h2>
 
-<b>In Fall 2022, I'm a teaching assistant for </b><br>
+<b>In Fall 2022, I'm a teaching assistant for MATH 1010 Calculus I</b><br>
 <br>
 <b>[Fall 2021 MATH 1010](http://haowen-math.com/teaching/2015-spring-teaching-1)</b> Calculus I<br>
 <b>[Spring 2021 MATH 1010](https://lms.rpi.edu)</b> Calculus I<br>
