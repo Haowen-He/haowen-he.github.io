@@ -13,8 +13,8 @@ redirect_from:
 
 <b>My current research interests are in </b><b><font color='#16B1B5'>data-driven modeling in mathematical biology</font></b> <b>and</b> <b><font color='#16B1B5'>data science applications</font></b>. <b>My work pursues developing mathematical and computational approaches to study biological phenomena and systems.</b> 
 
-<p>
-  <img src="https://haowen-he.github.io/images/logo.gif" alt="showcase gif" width="36%"> 
+<p align="center">
+  <img src="https://haowen-he.github.io/images/logo.gif" alt="showcase gif" width="66%"> 
 </p>
 
 <h2>Data-Driven Alzheimer's Disease Research</h2>
