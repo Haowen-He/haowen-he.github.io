@@ -24,11 +24,11 @@ redirect_from:
   &nbsp; &nbsp; 
   <img src="https://haowen-he.github.io/images/fourm.png" alt="Photo" width="48%"> 
 </p>
-<p><img src="https://haowen-he.github.io/images/chord.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
+<p><img src="https://haowen-he.github.io/images/chord.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br> <br> I'm interested in modeling factors that contribute to CyanoHABs using statistics & machine learning techniques.</p><br>
 
-<p><img src="https://haowen-he.github.io/images/violin.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
+<p><img src="https://haowen-he.github.io/images/violin.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br> <br> I'm interested in modeling factors that contribute to CyanoHABs using statistics & machine learning techniques.</p><br>
 
-<p><img src="https://haowen-he.github.io/images/complexheatmap.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
+<p><img src="https://haowen-he.github.io/images/complexheatmap.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br> <br> I'm interested in modeling factors that contribute to CyanoHABs using statistics & machine learning techniques.</p><br>
 
 <b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
 <br>
