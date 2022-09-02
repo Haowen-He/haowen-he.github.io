@@ -24,9 +24,9 @@ redirect_from:
   &nbsp; &nbsp; 
   <img src="https://haowen-he.github.io/images/fourm.png" alt="Photo" width="48%"> 
 </p>
-<p><img src="https://haowen-he.github.io/images/chord.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p>
+<p><img src="https://haowen-he.github.io/images/chord.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
 
-<p><img src="https://haowen-he.github.io/images/violin.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p>
+<p><img src="https://haowen-he.github.io/images/violin.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
 
 <p><img src="https://haowen-he.github.io/images/complexheatmap.png" alt="" width="36%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. </p><br>
 
