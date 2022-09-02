@@ -27,9 +27,9 @@ redirect_from:
 
 <img src="https://haowen-he.github.io/images/complexheatmap.png" width="36%" align="right" /> [FTD MINDER](https://inciteprojects.idea.rpi.edu/alzapp/app/alzapp/) is a web-based, dashboard-style data browsing tool that enables interactive exploration of single-cell RNA sequencing data. The primary inspiration for our application centers around exposing the large dataset of RNA transcripts from brain organoid models of frontotemporal dementia, which initally characterized in the 2021 [paper](https://www.cell.com/cell/fulltext/S0092-8674(21)00829-1?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867421008291%3Fshowall%3Dtrue) by Bowles et al. with the [Neural Stem Cell Institute](https://www.neuralsci.org). 
 
-<img src="https://haowen-he.github.io/images/chord.png" width="36%" align="right" /> RPI [StudySafe](https://inciteprojects.idea.rpi.edu/studysafe/app/studysafe) is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.<br>
+<img src="https://haowen-he.github.io/images/chord.png" width="36%" align="right" /> A central and ongoing goal of this project is to present the neural stem cell and tauopathy research communities with a general tool for automated and user-customized analyses of newly-generated transcriptomic datasets.<br>
 
-<br>
+
 <b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
 <br>
 <br>
