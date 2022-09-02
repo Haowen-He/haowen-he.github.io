@@ -29,9 +29,9 @@ redirect_from:
 
 <img src="https://haowen-he.github.io/images/chord.png" width="36%" align="right" /> A central and ongoing goal of this project is to present the neural stem cell and tauopathy research communities with a general tool for automated and user-customized analyses of newly-generated transcriptomic datasets.<br>
 
-Summer 2022 D2ARC Mini-conference: FTD Minder APP Intro and Features \[[slides](/files/MiniConference.pdf)\]
+Summer 2022 D2ARC Mini-conference: FTD Minder APP Introduction and Features \[[slides](/files/MiniConference.pdf)\]
 
-<b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
+<b> Supervised by [Dr. Sally Temple](https://www.neuralsci.org/about-us/our-team/sally-temple-scientific-director-neural-stem-cell-institute), [Dr. Kristin Bennett](https://science.rpi.edu/mathematical-sciences/faculty/kristin-bennett), [Dr. Keith Fraser](https://science.rpi.edu/biology/faculty/keith-fraser), [Dr. John Erickson](https://idea.rpi.edu/people/staff/john-s-erickson).</b>
 <br>
 <br>
 
