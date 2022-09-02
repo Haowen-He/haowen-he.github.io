@@ -20,11 +20,9 @@ redirect_from:
 <h2>Data-Driven Alzheimer's Disease Research</h2>
 
 <p align="center">
-  <img src="https://haowen-he.github.io/images/umap.png" alt="showcase gif" width="30%"> 
+  <img src="https://haowen-he.github.io/images/twom.png" alt="showcase gif" width="45%"> 
   &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/pseudotime.png" alt="Photo" width="30%"> 
-  &nbsp; &nbsp; 
-  <img src="https://haowen-he.github.io/images/chord.png" alt="showcase gif" width="30%">
+  <img src="https://haowen-he.github.io/images/fourm.png" alt="Photo" width="45%"> 
 </p>
 <p><img src="https://haowen-he.github.io/images/genedist.png" alt="" width="32%" align="left" /> CyanoHABs are common photosynthetic bacteria that live in surface waters. While we know of many factors that may contribute to CyanoHABs, how these factors come together to create a bloom of algae is not well understood. <br> <br> I'm interested in modeling factors that contribute to CyanoHABs using statistics & machine learning techniques.</p><br>
 
