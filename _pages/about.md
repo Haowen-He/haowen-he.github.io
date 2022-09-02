@@ -19,7 +19,7 @@ redirect_from:
 
 <h2>Data-Driven Alzheimer's Disease Research</h2>
 
-<p align="center">
+<p align="left">
   <img src="https://haowen-he.github.io/images/twom.png" alt="showcase gif" width="45%"> 
   &nbsp; &nbsp; 
   <img src="https://haowen-he.github.io/images/fourm.png" alt="Photo" width="45%"> 
