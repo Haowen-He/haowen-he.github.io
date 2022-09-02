@@ -25,9 +25,9 @@ redirect_from:
   <img src="https://haowen-he.github.io/images/fourm.png" alt="Photo" width="48%"> 
 </p>
 
-<img src="https://haowen-he.github.io/images/complexheatmap.png?raw=true" width="36%" align="right" /> RPI [StudySafe](https://inciteprojects.idea.rpi.edu/studysafe/app/studysafe) is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.
+<img src="https://haowen-he.github.io/images/complexheatmap.png" width="36%" align="right" /> RPI [StudySafe](https://inciteprojects.idea.rpi.edu/studysafe/app/studysafe) is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.
 
-<img src="https://haowen-he.github.io/images/chord.png?raw=true" width="36%" align="right" /> RPI [StudySafe](https://inciteprojects.idea.rpi.edu/studysafe/app/studysafe) is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.<br>
+<img src="https://haowen-he.github.io/images/chord.png" width="36%" align="right" /> RPI [StudySafe](https://inciteprojects.idea.rpi.edu/studysafe/app/studysafe) is designed to present WAP data to on-campus users so they can make informed decisions on where to go for extended periods of time on campus. The data can be interacted with in several ways, including selecting certain dates, times, locations, as well as through interactive geographical maps.<br>
 
 <br>
 <b> Supervised by [Dr. Jeremy Farrell](https://science.rpi.edu/biology/faculty/jeremy-farrell), [Dr. Sasha Wagner](https://science.rpi.edu/earth/faculty/sasha-wagner).</b>
