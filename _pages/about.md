@@ -80,8 +80,11 @@ Summer 2022 D2ARC Mini-conference: FTD Minder APP Introduction and Features \[[s
 <br>
 <b>[MATH 2400 Introduction to Differential Equations](https://lms.rpi.edu)</b> Spring 2023<br>
   * <b>[Exam I Solution](https://haowen-he.github.io/pages/404)</b><br>
+  * <b>[Exam II Solution](https://haowen-he.github.io/pages/404)</b><br>
+  * <b>[Exam III Solution](https://haowen-he.github.io/pages/404)</b><br>
 
 <b>[MATH 1010 Calculus I](https://lms.rpi.edu)</b> Fall 2019/2020/2021/2022 Spring 2021<br>
+  * <b>Faculty mentor: [Dr. Bruce Piper](https://faculty.rpi.edu/bruce-piper), [Dr. Maya Kiehl](https://faculty.rpi.edu/maya-kiehl) and [Dr. Eliane Zerbetto Traldi](https://faculty.rpi.edu/eliane-zerbetto-traldi)</b>
 
 <br>
 <br>
