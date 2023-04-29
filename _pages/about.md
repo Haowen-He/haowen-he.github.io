@@ -78,9 +78,10 @@ Summer 2022 D2ARC Mini-conference: FTD Minder APP Introduction and Features \[[s
 
 <b>In Summer 2023, I'm a teaching assistant for MATH 4800/CSCI 4800 Numerical Computing</b><br>
 <br>
-<b>[MATH 2400 Introduction to Differential Equations](http://haowen-math.com/teaching/2015-spring-teaching-1)</b> Spring 2023<br>
-   * <b>[Review Exercise Solution](https://haowen-he.github.io/pages/404)</b> 
+* MATH 2400 Introduction to Differential Equations (Spring 2023)
+  * <b>[Exam I Solution](https://haowen-he.github.io/pages/404)</b> 
 <b>[MATH 1010 Calculus I](https://lms.rpi.edu)</b> Fall 2019/2020/2021/2022 Spring 2021<br>
+
 <br>
 <br>
 <h2>Miscellany</h2>
