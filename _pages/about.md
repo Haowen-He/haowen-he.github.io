@@ -9,7 +9,7 @@ redirect_from:
 ---
 
 
-<b>I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. John Mitchell](https://science.rpi.edu/mathematical-sciences/faculty/john-e-mitchell) and [Dr. Kristin Bennett](https://science.rpi.edu/mathematical-sciences/faculty/kristin-bennett). Currently, I'm a research assistant at the [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with the [Darrin Fresh Water Institute](https://dfwi.rpi.edu).</b> 
+<b>I'm a graduate student of [Applied Mathematics](https://science.rpi.edu/mathematical-sciences) at [Rensselaer Polytechnic Institute](https://www.rpi.edu), where I am advised by [Dr. John Mitchell](https://homepages.rpi.edu/~mitchj/) and [Dr. Kristin Bennett](https://homepages.rpi.edu/~bennek/). Currently, I'm a research assistant at the [Institute for Data Exploration and Applications](https://idea.rpi.edu), affiliated with the [Darrin Fresh Water Institute](https://dfwi.rpi.edu).</b> 
 
 <b>My current research interests are in </b><b><font color='#16B1B5'>data-driven modeling in mathematical biology</font></b> <b>and</b> <b><font color='#16B1B5'>data science applications</font></b>. <b>My work pursues developing mathematical and computational approaches to study biological phenomena and systems.</b> 
 
