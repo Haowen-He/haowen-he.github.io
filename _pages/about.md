@@ -76,8 +76,15 @@ Summer 2022 D2ARC Mini-conference: FTD Minder APP Introduction and Features \[[s
 <br>
 <h2>Teaching</h2>
 
-<b>In Summer 2023, I'm a teaching assistant for MATH 4800/CSCI 4800 Numerical Computing</b><br>
+<b>In Fall 2023, I'm a teaching assistant for BIOS 4401 Experimental Design and Statistical Methods</b><br>
 <br>
+<b>[MATH 4800/CSCI 4800 Numerical Computing](https://lms.rpi.edu)</b> Summer 2023<br>
+  * <b>[Homework assignment 1 Solution](/files/NC_HW1_U23.pdf)</b><br>
+  * <b>[Homework assignment 2 Solution](/files/NC_HW2_U23.pdf)</b><br>
+  * <b>[Homework assignment 3 Solution](/files/NC_HW3_U23.pdf)</b><br>
+  * <b>[Homework assignment 4 Solution](/files/NC_HW4_U23.pdf)</b><br>
+  * <b>[Exam I Solution](/files/ex1solutions.pdf)</b><br>
+
 <b>[MATH 2400 Introduction to Differential Equations](https://lms.rpi.edu)</b> Spring 2023<br>
   * <b>[Exam I Solution](/files/MATH2400_Exam1_SPRING2023.pdf)</b><br>
   * <b>[Exam II Solution](/files/MATH2400_Exam2_SPRING2023.pdf)</b><br>
