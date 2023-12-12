@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "while (alive) { run(); }"
 title_separator          : "-"
 name                     : &name "Haowen He"
-description              : &description "B.S./M.S. student, Department of Mathematical Sciences, Rensselaer Polytechnic Institute, advised by Dr. John Mitchell and Dr. Kristin Bennett"
+description              : &description "PhD student in multidisciplinary program of Computational Biology and BioInformatics, Georgia Institute of Technology"
 url                      : https://haowen-he.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Haowen-He/haowen-he.github.io"
@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Haowen He"
   avatar           : "he.png"
-  bio              : "B.S./M.S. student, Department of Mathematical Sciences, Rensselaer Polytechnic Institute, advised by Dr. John Mitchell and Dr. Kristin Bennett"
-  location         : "Troy, NY"
+  bio              : "PhD student in multidisciplinary program of Computational Biology and BioInformatics, Georgia Institute of Technology"
+  location         : "Atlanta, GA"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : /files/HeHaowen-CV.pdf
