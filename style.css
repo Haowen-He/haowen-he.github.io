@@ -893,19 +893,19 @@ html.lowpower .orb {
     height: 7rem;
     margin-bottom: 0.75rem;
   }
-  #home .utah-logo-link {
+  #home .gt-logo-link {
     margin-bottom: 0.5rem;
   }
   /* Social-links row: tighten gap to email block */
-  #home .utah-logo-link + .flex {
+  #home .gt-logo-link + .flex {
     margin-bottom: 0.75rem;
   }
   /* Email monospace block */
-  #home .utah-logo-link + .flex + .text-sm.font-mono {
+  #home .gt-logo-link + .flex + .text-sm.font-mono {
     margin-bottom: 0.75rem;
   }
   /* Map: slightly smaller on short heights */
   #home [data-map-hover] > .rounded-xl {
     height: 6.5rem;
   }
-}
+} 
