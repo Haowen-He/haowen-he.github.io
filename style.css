@@ -938,31 +938,35 @@ html.lowpower .orb {
   }
 }
 
+.gt-logo-link {
+  display: inline-block;
+}
+
 .gt-logo-link svg {
   height: 100%;
   width: auto;
   display: block;
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-/* not hovered: make both colors blue-toned */
+/* smooth color transitions */
 .gt-logo-link svg .cls-1,
 .gt-logo-link svg .cls-2 {
   transition: fill 0.2s ease;
 }
 
-.gt-logo-link:not(:hover) svg .cls-1 {
+/* DEFAULT: all blue-toned */
+.gt-logo-link svg .cls-1 {
   fill: #274c7a !important;
 }
 
-.gt-logo-link:not(:hover) svg .cls-2 {
+.gt-logo-link svg .cls-2 {
   fill: #143156 !important;
 }
 
-/* hovered: restore original two colors */
+/* HOVER: restore original two-color logo */
 .gt-logo-link:hover svg {
   transform: scale(1.03);
-  filter: none;
 }
 
 .gt-logo-link:hover svg .cls-1 {
