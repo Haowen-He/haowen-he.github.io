@@ -13,6 +13,17 @@ layout: compress
 
   <body>
 
+    <div class="page-bg" aria-hidden="true">
+      <canvas id="shader-gradient" class="shader-gradient"></canvas>
+      <div id="orb-fallback" class="orb-fallback" hidden>
+        <div class="orb orb-violet"></div>
+        <div class="orb orb-blue"></div>
+        <div class="orb orb-teal"></div>
+        <div class="orb orb-emerald"></div>
+      </div>
+      <div class="bg-grain"></div>
+    </div>
+
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
