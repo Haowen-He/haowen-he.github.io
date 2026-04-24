@@ -1879,8 +1879,8 @@ function initContactMaps() {
   var mapEls = document.querySelectorAll(".js-contact-map");
   if (!mapEls.length) return;
 
-  var lat = 40.76562;
-  var lng = -111.84956;
+  var lat = 33.78100385792484;
+  var lng = -84.39837244574292;
 
   mapEls.forEach(function (el) {
     if (el._leaflet_id) {
@@ -1918,7 +1918,7 @@ function initContactMaps() {
       fillOpacity: 1,
     })
       .addTo(map)
-      .bindPopup("Office: 106 LeRoy Cowles Bldg (LCB)", {
+      .bindPopup("Krone Engineered Biosystems Building (EBB)", {
         closeButton: false,
         closeOnClick: false,
         autoClose: false,
