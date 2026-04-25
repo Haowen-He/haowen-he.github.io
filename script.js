@@ -1150,44 +1150,38 @@ function createUnifiedAnimator(rng) {
     warmupDuration: 0,
   };
 
-  
-
   function layoutItems() {
-  items.length = 0;
+    items.length = 0;
 
-  var count = 4;
-  var gap = 6;
+    var count = 4;
+    var pad = 2;
+    var gap = 4;
+    var usable = width - 2 * pad;
+    var slotW = usable / count;
+    var itemH = height - 2 * pad;
+    // cap width so motifs never get wider than 1.3x their height (prevents pancaking)
+    var itemW = Math.min(slotW - gap, itemH * 1.3);
 
-  // Max width each motif can take
-  var itemH = height * 0.9;
-  var itemW = Math.min(itemH * 1.3, width / count);
+    var kinds = ["cell", "network", "cyto", "hist"];
+    var opacities = [0.9, 0.9, 0.86, 0.92];
 
-  // Total width of all motifs + gaps
-  var totalW = count * itemW + (count - 1) * gap;
+    for (var i = 0; i < count; i++) {
+      var cx = pad + slotW * (i + 0.5);
 
-  // Center the whole group
-  var startX = (width - totalW) * 0.5 + itemW * 0.5;
-
-  var kinds = ["cell", "network", "cyto", "hist"];
-  var opacities = [0.9, 0.9, 0.86, 0.92];
-
-  for (var i = 0; i < count; i++) {
-    var cx = startX + i * (itemW + gap);
-
-    items.push({
-      kind: kinds[i],
-      x: cx,
-      y: height * 0.5, 
-      w: itemW,
-      h: itemH,
-      driftX: 0.4 + rng() * 0.6,
-      driftY: 0.2 + rng() * 0.3,
-      driftSpeed: 0.1 + rng() * 0.08,
-      driftPhase: rng() * TAU,
-      opacity: opacities[i] + rng() * 0.05,
-    });
+      items.push({
+        kind: kinds[i],
+        x: cx,
+        y: height * 0.5,
+        w: itemW,
+        h: itemH,
+        driftX: 0.4 + rng() * 0.6,
+        driftY: 0.2 + rng() * 0.3,
+        driftSpeed: 0.1 + rng() * 0.08,
+        driftPhase: rng() * TAU,
+        opacity: opacities[i] + rng() * 0.05,
+      });
+    }
   }
-}
 
   function spawnCellBurst(site) {
     if (!cell.item) return;
