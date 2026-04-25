@@ -1736,11 +1736,787 @@ function drawHist(ctx, item) {
   };
 }
 
+// ─────────────────────────────────────────────────────────────
+//  1. CELL DIVISION & REGENERATION
+//     Usage:  <canvas data-anim="division"></canvas>
+//  Shows cells cycling through mitosis phases with radial
+//  division-plane glows, chromosome condensation / separation,
+//  and daughter-cell production.
+// ─────────────────────────────────────────────────────────────
+ 
+function createCellDivisionAnimator(rng) {
+  let width = 1, height = 1, time = 0;
+  const cells = [];
+  const MAX_CELLS = 7;
+ 
+  // Phase indices
+  const PH = { INTER: 0, PRO: 1, META: 2, ANA: 3, TELO: 4, CYTO: 5 };
+  // Duration (seconds) per phase
+  const DUR = [5.5, 1.8, 1.8, 1.6, 1.2, 2.2];
+ 
+  function makeCell(x, y, r, phaseOffset) {
+    return {
+      x, y,
+      baseR: r,
+      phase: PH.INTER,
+      phaseT: phaseOffset != null ? phaseOffset : rng() * DUR[PH.INTER],
+      // chromosome pair data (4 chromatids)
+      chroms: Array.from({ length: 4 }, (_, i) => ({
+        angle: (i / 4) * TAU + rng() * 0.4,
+        opacity: 0,
+      })),
+      divGlow: 0,
+      pinch: 0,
+      pulseOff: rng() * TAU,
+      vx: (rng() - 0.5) * 8,
+      vy: (rng() - 0.5) * 8,
+    };
+  }
+ 
+  function reset(w, h) {
+    width = w; height = h; time = 0;
+    cells.length = 0;
+    const n = MotionState.lowPower ? 3 : 5;
+    for (let i = 0; i < n; i++) {
+      const r = 16 + rng() * 14;
+      cells.push(makeCell(
+        r * 1.2 + rng() * (w - r * 2.4),
+        r * 1.2 + rng() * (h - r * 2.4),
+        r,
+        rng() * 12   // stagger start
+      ));
+    }
+  }
+ 
+  function updateCell(c, dt) {
+    // Drift + dampen
+    c.vx = c.vx * 0.97 + (rng() - 0.5) * 0.8;
+    c.vy = c.vy * 0.97 + (rng() - 0.5) * 0.8;
+    c.x += c.vx * dt;
+    c.y += c.vy * dt;
+    const pad = c.baseR * 1.3;
+    if (c.x < pad)           { c.x = pad;           c.vx = Math.abs(c.vx); }
+    if (c.x > width - pad)   { c.x = width - pad;   c.vx = -Math.abs(c.vx); }
+    if (c.y < pad)           { c.y = pad;            c.vy = Math.abs(c.vy); }
+    if (c.y > height - pad)  { c.y = height - pad;  c.vy = -Math.abs(c.vy); }
+ 
+    c.phaseT += dt;
+    const dur = DUR[c.phase];
+    const t = Math.min(c.phaseT / dur, 1);
+ 
+    switch (c.phase) {
+      case PH.INTER:
+        // Slow breathing, nucleus visible
+        c.chroms.forEach(ch => { ch.opacity = 0; });
+        c.divGlow = 0; c.pinch = 0;
+        if (t >= 1) { c.phase = PH.PRO; c.phaseT = 0; }
+        break;
+ 
+      case PH.PRO:
+        // Chromosomes condense
+        c.chroms.forEach(ch => { ch.opacity = t; });
+        c.divGlow = t * 0.35;
+        if (t >= 1) { c.phase = PH.META; c.phaseT = 0; }
+        break;
+ 
+      case PH.META:
+        // Chromosomes align to metaphase plate
+        c.chroms.forEach(ch => { ch.opacity = 1; });
+        c.divGlow = 0.35 + t * 0.5;
+        if (t >= 1) { c.phase = PH.ANA; c.phaseT = 0; }
+        break;
+ 
+      case PH.ANA:
+        // Sister chromatids pull to poles
+        c.divGlow = 0.85;
+        if (t >= 1) { c.phase = PH.TELO; c.phaseT = 0; }
+        break;
+ 
+      case PH.TELO:
+        c.pinch = t;
+        c.divGlow = lerp(0.85, 0.3, t);
+        if (t >= 1) { c.phase = PH.CYTO; c.phaseT = 0; }
+        break;
+ 
+      case PH.CYTO:
+        c.pinch = 1;
+        if (t >= 1) {
+          // Reset to interphase as smaller daughter cell
+          c.phase = PH.INTER; c.phaseT = 0;
+          c.pinch = 0; c.divGlow = 0;
+          c.baseR *= 0.72;
+          c.chroms.forEach(ch => { ch.opacity = 0; });
+          // Spawn partner daughter if room
+          if (cells.length < MAX_CELLS) {
+            const d = makeCell(
+              c.x + (rng() - 0.5) * c.baseR * 2.2,
+              c.y + (rng() - 0.5) * c.baseR * 2.2,
+              c.baseR, 0
+            );
+            cells.push(d);
+          }
+        }
+        break;
+    }
+  }
+ 
+  function drawCell(ctx, c) {
+    const t = Math.min(c.phaseT / DUR[c.phase], 1);
+    const ph = c.phase;
+    const r = c.baseR;
+    const breathe = 1 + 0.07 * Math.sin(time * 0.9 + c.pulseOff);
+ 
+    ctx.save();
+    ctx.translate(c.x, c.y);
+ 
+    // Radial division glow
+    if (c.divGlow > 0.04) {
+      const gr = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 2.2);
+      gr.addColorStop(0, `rgba(184,242,0,${c.divGlow * 0.28})`);
+      gr.addColorStop(1, 'rgba(184,242,0,0)');
+      ctx.fillStyle = gr;
+      ctx.beginPath();
+      ctx.arc(0, 0, r * 2.2, 0, TAU);
+      ctx.fill();
+    }
+ 
+    if (c.pinch > 0.05) {
+      // Figure-8 pinching shape
+      const sq = 1 - c.pinch * 0.38;
+      const off = r * 0.52 * c.pinch;
+      [-1, 1].forEach(pole => {
+        ctx.beginPath();
+        ctx.ellipse(0, pole * off * 0.55, r * sq, r * 0.58, 0, 0, TAU);
+        ctx.fillStyle = 'rgba(44,95,246,0.22)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(44,95,246,0.88)';
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
+      });
+    } else {
+      // Normal cell body
+      const elongY = ph === PH.ANA ? breathe + t * 0.28 : breathe;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, r, r * elongY, 0, 0, TAU);
+      ctx.fillStyle = 'rgba(44,95,246,0.18)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(44,95,246,0.88)';
+      ctx.lineWidth = 1.8;
+      ctx.stroke();
+ 
+      // Nucleus (interphase / prophase only)
+      if (ph <= PH.PRO) {
+        const nr = r * 0.42;
+        ctx.beginPath();
+        ctx.arc(0, 0, nr, 0, TAU);
+        ctx.fillStyle = 'rgba(44,95,246,0.30)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(44,95,246,0.65)';
+        ctx.lineWidth = 1.0;
+        ctx.stroke();
+      }
+    }
+ 
+    // Chromosomes (prophase → telophase)
+    if (ph >= PH.PRO && ph <= PH.TELO) {
+      c.chroms.forEach((ch, i) => {
+        if (ch.opacity < 0.04) return;
+        ctx.globalAlpha = ch.opacity;
+ 
+        let cx, cy;
+        if (ph === PH.ANA) {
+          const pole = i < 2 ? -1 : 1;
+          cy = pole * r * 0.52 * t;
+          cx = (i % 2 === 0 ? -1 : 1) * r * 0.14;
+        } else if (ph === PH.TELO) {
+          const pole = i < 2 ? -1 : 1;
+          cy = pole * r * 0.48;
+          cx = (i % 2 === 0 ? -1 : 1) * r * 0.12;
+        } else {
+          // Metaphase plate
+          cx = (i % 2 === 0 ? -1 : 1) * r * 0.18;
+          cy = (i < 2 ? -1 : 1) * r * 0.1;
+        }
+ 
+        const clen = r * 0.24;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = 'rgba(184,242,0,1)';
+        ctx.lineWidth = 3.2;
+        ctx.beginPath();
+        ctx.moveTo(cx - clen * 0.5, cy);
+        ctx.lineTo(cx + clen * 0.5, cy);
+        ctx.stroke();
+        // Centromere dot
+        ctx.fillStyle = 'rgba(184,242,0,1)';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 2.2, 0, TAU);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+    }
+ 
+    // Metaphase plate dashed line
+    if (ph === PH.META || ph === PH.ANA) {
+      const pAlpha = ph === PH.META ? t * 0.65 : lerp(0.65, 0, t);
+      ctx.setLineDash([3.5, 3]);
+      ctx.strokeStyle = `rgba(184,242,0,${pAlpha})`;
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(-r * 0.82, 0);
+      ctx.lineTo(r * 0.82, 0);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+ 
+    ctx.restore();
+  }
+ 
+  function update(dt) {
+    time += dt;
+    for (let i = cells.length - 1; i >= 0; i--) updateCell(cells[i], dt);
+    // Cap population
+    while (cells.length > MAX_CELLS) cells.shift();
+  }
+ 
+  function draw(ctx) {
+    ctx.fillStyle = 'rgba(216,231,255,0.52)';
+    ctx.fillRect(0, 0, width, height);
+    cells.forEach(c => drawCell(ctx, c));
+  }
+ 
+  return { reset, update, draw };
+}
+ 
+ 
+// ─────────────────────────────────────────────────────────────
+//  2. CHROMATIN ACCESSIBILITY  (two-condition ATAC-seq viz)
+//     Usage:  <canvas data-anim="chromatin"></canvas>
+//  Left half = OPEN chromatin: spaced nucleosomes, chartreuse
+//  accessibility bursts, tall ATAC peaks.
+//  Right half = CLOSED chromatin: tightly packed, silent.
+// ─────────────────────────────────────────────────────────────
+ 
+function createChromatinAnimator(rng) {
+  let width = 1, height = 1, time = 0;
+  const openNucs  = [];  // open-chromatin nucleosomes
+  const closedNucs = []; // closed-chromatin nucleosomes
+  const signals = [];    // expanding accessibility rings
+ 
+  function reset(w, h) {
+    width = w; height = h; time = 0;
+    openNucs.length = 0; closedNucs.length = 0; signals.length = 0;
+ 
+    const halfW = w / 2;
+    const dnaY  = h * 0.42;
+ 
+    // Open chromatin: 7-8 nucleosomes, evenly spaced, some offset
+    const nOpen = 7;
+    for (let i = 0; i < nOpen; i++) {
+      openNucs.push({
+        x: halfW * (0.07 + (i / (nOpen - 1)) * 0.86),
+        baseY: dnaY,
+        y: dnaY,
+        r: 7.5 + rng() * 2.5,
+        yOff: (rng() - 0.5) * 9,
+        wobble: rng() * TAU,
+        accessSignal: 0,
+        signalTimer: rng() * 3.5,
+        peakH: 0.25 + rng() * 0.35,
+      });
+    }
+ 
+    // Closed chromatin: 13 nucleosomes packed tightly in two rows
+    const nClosed = 13;
+    for (let i = 0; i < nClosed; i++) {
+      const row = i % 2;
+      closedNucs.push({
+        x: halfW + halfW * (0.05 + (i / (nClosed - 1)) * 0.9),
+        baseY: dnaY + (row - 0.5) * 11,
+        y: dnaY + (row - 0.5) * 11,
+        r: 5.5 + rng() * 1.5,
+        wobble: rng() * TAU,
+        accessSignal: 0,
+      });
+    }
+  }
+ 
+  function spawnSignal(x, y) {
+    signals.push({ x, y, life: 1, ttl: 1.0 + rng() * 0.7, r: 1, maxR: 9 + rng() * 7 });
+  }
+ 
+  function update(dt) {
+    time += dt;
+ 
+    openNucs.forEach(n => {
+      n.y = n.baseY + n.yOff + Math.sin(time * 0.75 + n.wobble) * 4.5;
+      n.signalTimer -= dt;
+      if (n.signalTimer <= 0) {
+        n.accessSignal = 1.0;
+        n.signalTimer = 1.8 + rng() * 3.2;
+        spawnSignal(n.x, n.y - n.r - 4);
+      }
+      n.accessSignal = Math.max(0, n.accessSignal - dt * 1.4);
+    });
+ 
+    closedNucs.forEach(n => {
+      n.y = n.baseY + Math.sin(time * 0.28 + n.wobble) * 1.2;
+      n.accessSignal = Math.max(0, n.accessSignal - dt * 3);
+    });
+ 
+    for (let i = signals.length - 1; i >= 0; i--) {
+      const s = signals[i];
+      s.life -= dt / s.ttl;
+      s.r = s.maxR * (1 - s.life);
+      if (s.life <= 0) signals.splice(i, 1);
+    }
+  }
+ 
+  function drawDNA(ctx, nucs, x0, x1, baseY, isOpen) {
+    if (!nucs.length) return;
+    ctx.beginPath();
+    ctx.moveTo(x0, baseY);
+    let px = x0, py = baseY;
+    nucs.forEach(n => {
+      const midX = (px + n.x - n.r) / 2;
+      const midY = isOpen ? baseY + Math.sin(time * 0.5 + n.x * 0.04) * 5 : baseY;
+      ctx.quadraticCurveTo(midX, midY, n.x - n.r, n.y);
+      px = n.x + n.r; py = n.y;
+    });
+    ctx.lineTo(x1, baseY);
+    ctx.strokeStyle = isOpen ? 'rgba(44,95,246,0.55)' : 'rgba(26,53,168,0.42)';
+    ctx.lineWidth = isOpen ? 1.6 : 1.2;
+    ctx.stroke();
+  }
+ 
+  function draw(ctx) {
+    const halfW = width / 2;
+    const peakY  = height * 0.75;
+    const peakH  = height * 0.22;
+ 
+    // Panel backgrounds
+    ctx.fillStyle = 'rgba(225,235,255,0.58)';
+    ctx.fillRect(0, 0, halfW, height);
+    ctx.fillStyle = 'rgba(198,212,240,0.58)';
+    ctx.fillRect(halfW, 0, halfW, height);
+ 
+    // Centre divider
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = 'rgba(44,95,246,0.18)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(halfW, 0); ctx.lineTo(halfW, height);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.restore();
+ 
+    // Labels
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 9px "Outfit",sans-serif';
+    ctx.fillStyle = 'rgba(44,95,246,0.72)';
+    ctx.fillText('OPEN CHROMATIN', halfW * 0.5, 13);
+    ctx.fillStyle = 'rgba(16,26,91,0.48)';
+    ctx.fillText('CLOSED CHROMATIN', halfW * 1.5, 13);
+    ctx.textAlign = 'left';
+ 
+    const dnaY = height * 0.42;
+ 
+    // DNA strands
+    drawDNA(ctx, openNucs,   2,       halfW - 2, dnaY, true);
+    drawDNA(ctx, closedNucs, halfW+2, width - 2, dnaY, false);
+ 
+    // Open nucleosomes
+    openNucs.forEach(n => {
+      if (n.accessSignal > 0.04) {
+        const gr = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 2.8);
+        gr.addColorStop(0, `rgba(184,242,0,${n.accessSignal * 0.38})`);
+        gr.addColorStop(1, 'rgba(184,242,0,0)');
+        ctx.fillStyle = gr;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r * 2.8, 0, TAU); ctx.fill();
+      }
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, TAU);
+      ctx.fillStyle = `rgba(44,95,246,${0.50 + n.accessSignal * 0.38})`;
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(44,95,246,0.9)';
+      ctx.lineWidth = 1.3; ctx.stroke();
+      // Acetylation mark when accessible
+      if (n.accessSignal > 0.18) {
+        ctx.fillStyle = 'rgba(184,242,0,0.92)';
+        ctx.beginPath(); ctx.arc(n.x, n.y - n.r - 3.5, 2.2, 0, TAU); ctx.fill();
+      }
+    });
+ 
+    // Closed nucleosomes
+    closedNucs.forEach(n => {
+      ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, TAU);
+      ctx.fillStyle = 'rgba(26,53,168,0.40)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(26,53,168,0.65)';
+      ctx.lineWidth = 1.0; ctx.stroke();
+    });
+ 
+    // Accessibility rings
+    signals.forEach(s => {
+      ctx.globalAlpha = s.life * 0.72;
+      ctx.strokeStyle = 'rgba(184,242,0,0.95)';
+      ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, TAU); ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+ 
+    // ── ATAC-seq peak tracks ──
+    // Baseline
+    ctx.strokeStyle = 'rgba(44,95,246,0.22)';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(2, peakY); ctx.lineTo(width - 2, peakY); ctx.stroke();
+ 
+    // Open peaks (tall, sharp, chartreuse-topped)
+    openNucs.forEach(n => {
+      const h = peakH * clamp(n.peakH + n.accessSignal * 0.62, 0.08, 1);
+      const bw = 7;
+      const gr = ctx.createLinearGradient(0, peakY, 0, peakY - h);
+      gr.addColorStop(0, 'rgba(44,95,246,0.12)');
+      gr.addColorStop(0.55, 'rgba(44,95,246,0.55)');
+      gr.addColorStop(1, `rgba(184,242,0,${0.55 + n.accessSignal * 0.45})`);
+      ctx.fillStyle = gr;
+      // Rounded top bar
+      ctx.beginPath();
+      ctx.moveTo(n.x - bw/2, peakY);
+      ctx.lineTo(n.x - bw/2, peakY - h + 3);
+      ctx.quadraticCurveTo(n.x - bw/2, peakY - h, n.x, peakY - h);
+      ctx.quadraticCurveTo(n.x + bw/2, peakY - h, n.x + bw/2, peakY - h + 3);
+      ctx.lineTo(n.x + bw/2, peakY);
+      ctx.closePath();
+      ctx.fill();
+    });
+ 
+    // Closed peaks (nearly flat, dark)
+    closedNucs.forEach(n => {
+      const h = peakH * 0.06;
+      ctx.fillStyle = 'rgba(26,53,168,0.18)';
+      ctx.fillRect(n.x - 3, peakY - h, 6, h);
+    });
+ 
+    // Peak track labels
+    ctx.font = '8px "Outfit",sans-serif';
+    ctx.fillStyle = 'rgba(44,95,246,0.5)';
+    ctx.fillText('ATAC', 4, peakY - 4);
+  }
+ 
+  return { reset, update, draw };
+}
+ 
+ 
+// ─────────────────────────────────────────────────────────────
+//  3. CICHLID COURTSHIP & SANDCASTLE BUILDING
+//     Usage:  <canvas data-anim="cichlid"></canvas>
+//  Males (brighter, larger) display, circle females, and carry
+//  sand grains to build a mound.  Females swim independently.
+// ─────────────────────────────────────────────────────────────
+ 
+function createCichlidAnimator(rng) {
+  let width = 1, height = 1, time = 0;
+  const fish = [];
+  const grains = [];     // sand grains (settled + airborne)
+  let moundH = 0;        // current mound height in px
+ 
+  const SAND_Y_FRAC = 0.86;   // where the sand bed starts
+  const MAX_GRAINS  = 70;
+  const MAX_FISH    = 6;
+ 
+  function makeFish(x, y, isMale) {
+    return {
+      x, y,
+      angle: rng() * TAU,
+      speed: isMale ? 22 + rng() * 12 : 17 + rng() * 10,
+      bodyLen: isMale ? 20 + rng() * 6 : 16 + rng() * 5,
+      swimPhase: rng() * TAU,
+      swimFreq: 2.8 + rng() * 1.5,
+      isMale,
+      state: 'swim',     // swim | court | build
+      stateTimer: rng() * 4,
+      targetX: rng() * (width || 200),
+      targetY: rng() * ((height || 150) * 0.7),
+      turnRate: 1.5 + rng() * 1.0,
+      courtTarget: null,
+      trail: [],
+      displayPulse: 0,   // courtship display brightness
+    };
+  }
+ 
+  function reset(w, h) {
+    width = w; height = h; time = 0;
+    fish.length = 0; grains.length = 0; moundH = 0;
+ 
+    const n = MotionState.lowPower ? 3 : 5;
+    for (let i = 0; i < n; i++) {
+      fish.push(makeFish(
+        rng() * w,
+        20 + rng() * h * 0.65,
+        i < Math.ceil(n * 0.55)   // slightly more males
+      ));
+    }
+    // Pre-place some settled sand grains
+    for (let i = 0; i < 25; i++) {
+      grains.push({
+        x: w * 0.28 + (rng() - 0.5) * w * 0.44,
+        y: h * SAND_Y_FRAC + rng() * h * 0.10,
+        r: 1 + rng() * 2,
+        settled: true, vx: 0, vy: 0,
+      });
+    }
+    moundH = h * 0.04;
+  }
+ 
+  function drawFish(ctx, f) {
+    const sw = Math.sin(f.swimPhase) * 0.22;   // body sway
+    const bl = f.bodyLen;
+    const bw = bl * 0.30;
+ 
+    ctx.save();
+    ctx.translate(f.x, f.y);
+    ctx.rotate(f.angle);
+ 
+    // Tail
+    ctx.save();
+    ctx.translate(-bl * 0.52, 0);
+    ctx.rotate(sw * 1.2);
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(-bl * 0.36, -bw * 0.75);
+    ctx.lineTo(-bl * 0.20, 0);
+    ctx.lineTo(-bl * 0.36,  bw * 0.75);
+    ctx.closePath();
+    ctx.fillStyle = f.isMale
+      ? `rgba(26,53,168,${0.80 + f.displayPulse * 0.18})`
+      : 'rgba(80,120,200,0.72)';
+    ctx.fill();
+    ctx.restore();
+ 
+    // Body ellipse
+    ctx.beginPath();
+    ctx.ellipse(0, sw * bw * 0.28, bl * 0.52, bw, 0, 0, TAU);
+    ctx.fillStyle = f.isMale
+      ? `rgba(44,95,246,${0.82 + f.displayPulse * 0.18})`
+      : 'rgba(100,145,220,0.78)';
+    ctx.fill();
+    ctx.strokeStyle = f.isMale ? 'rgba(26,53,168,0.95)' : 'rgba(60,100,180,0.85)';
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+ 
+    // Dorsal fin
+    ctx.beginPath();
+    ctx.moveTo(bl * 0.22, -bw * 0.38);
+    ctx.quadraticCurveTo(0, -bw * 0.95, -bl * 0.18, -bw * 0.32);
+    ctx.strokeStyle = f.isMale ? 'rgba(26,53,168,0.65)' : 'rgba(60,100,180,0.55)';
+    ctx.lineWidth = 1.0; ctx.stroke();
+ 
+    // Iridescent stripe (male only)
+    if (f.isMale) {
+      ctx.beginPath();
+      ctx.moveTo(-bl * 0.08, -bw * 0.52);
+      ctx.lineTo(-bl * 0.08,  bw * 0.52);
+      ctx.strokeStyle = `rgba(184,242,0,${0.45 + f.displayPulse * 0.45})`;
+      ctx.lineWidth = 2.0; ctx.stroke();
+    }
+ 
+    // Eye
+    ctx.beginPath(); ctx.arc(bl * 0.28, -bw * 0.10, 2.8, 0, TAU);
+    ctx.fillStyle = 'rgba(16,26,91,0.92)'; ctx.fill();
+    ctx.beginPath(); ctx.arc(bl * 0.28 + 0.6, -bw * 0.10 - 0.6, 0.9, 0, TAU);
+    ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.fill();
+ 
+    ctx.restore();
+  }
+ 
+  function updateFish(f, dt) {
+    f.swimPhase += f.swimFreq * dt;
+    f.stateTimer  -= dt;
+    f.displayPulse = Math.max(0, f.displayPulse - dt * 1.2);
+ 
+    // State transitions
+    if (f.stateTimer <= 0) {
+      const r = rng();
+      if (f.isMale && r < 0.28) {
+        f.state = 'build';
+        f.targetX = width  * (0.35 + (rng() - 0.5) * 0.30);
+        f.targetY = height * (SAND_Y_FRAC - 0.06);
+        f.stateTimer = 2.5 + rng() * 2.5;
+      } else if (f.isMale && r < 0.56) {
+        f.state = 'court';
+        const females = fish.filter(ff => !ff.isMale);
+        f.courtTarget = females.length
+          ? females[Math.floor(rng() * females.length)] : null;
+        f.stateTimer = 3.5 + rng() * 3;
+      } else {
+        f.state = 'swim';
+        f.targetX = width  * (0.05 + rng() * 0.90);
+        f.targetY = height * (0.05 + rng() * 0.72);
+        f.stateTimer = 2 + rng() * 4;
+      }
+    }
+ 
+    // Determine steering target
+    let tx = f.targetX, ty = f.targetY;
+    if (f.state === 'court' && f.courtTarget) {
+      const orbitR = f.bodyLen * 2.8;
+      tx = f.courtTarget.x + Math.cos(time * 0.85 + f.swimPhase * 0.15) * orbitR;
+      ty = f.courtTarget.y + Math.sin(time * 0.85 + f.swimPhase * 0.15) * orbitR * 0.55;
+      f.displayPulse = Math.min(1, f.displayPulse + dt * 2.5);
+    }
+ 
+    // Steer
+    const dx = tx - f.x, dy = ty - f.y;
+    const dist = Math.hypot(dx, dy) || 1;
+    const desired = Math.atan2(dy, dx);
+    let diff = desired - f.angle;
+    while (diff >  Math.PI) diff -= TAU;
+    while (diff < -Math.PI) diff += TAU;
+    f.angle += diff * f.turnRate * dt;
+ 
+    const spd = f.speed * (f.state === 'build' ? 1.35 : f.state === 'court' ? 1.15 : 1.0);
+    if (dist > 6) {
+      f.x += Math.cos(f.angle) * spd * dt;
+      f.y += Math.sin(f.angle) * spd * dt;
+    }
+ 
+    // Bounds
+    const pad = f.bodyLen * 1.1;
+    f.x = clamp(f.x, pad, width - pad);
+    f.y = clamp(f.y, pad, height * SAND_Y_FRAC - 2);
+ 
+    // Sand building
+    if (f.state === 'build' && f.y > height * (SAND_Y_FRAC - 0.08)) {
+      moundH = Math.min(moundH + dt * 1.1, height * 0.13);
+      if (rng() < 3.5 * dt && grains.length < MAX_GRAINS) {
+        grains.push({
+          x: f.x + (rng() - 0.5) * 18,
+          y: height * SAND_Y_FRAC,
+          r: 1 + rng() * 2,
+          settled: false,
+          vx: (rng() - 0.5) * 14,
+          vy: -22 - rng() * 16,
+        });
+      }
+    }
+ 
+    // Trail
+    f.trail.push({ x: f.x, y: f.y });
+    if (f.trail.length > 9) f.trail.shift();
+  }
+ 
+  function update(dt) {
+    time += dt;
+    fish.forEach(f => updateFish(f, dt));
+ 
+    // Settle airborne grains
+    grains.forEach(g => {
+      if (g.settled) return;
+      g.vy += 35 * dt;
+      g.x  += g.vx * dt;
+      g.y  += g.vy * dt;
+      if (g.y >= height * SAND_Y_FRAC) {
+        g.y = height * SAND_Y_FRAC;
+        g.settled = true;
+      }
+    });
+  }
+ 
+  function draw(ctx) {
+    const sandY = height * SAND_Y_FRAC;
+ 
+    // Water gradient
+    const wGrad = ctx.createLinearGradient(0, 0, 0, sandY);
+    wGrad.addColorStop(0, 'rgba(195,222,255,0.62)');
+    wGrad.addColorStop(1, 'rgba(155,198,240,0.72)');
+    ctx.fillStyle = wGrad;
+    ctx.fillRect(0, 0, width, sandY);
+ 
+    // Sand bed
+    const sGrad = ctx.createLinearGradient(0, sandY, 0, height);
+    sGrad.addColorStop(0, 'rgba(205,172,102,0.88)');
+    sGrad.addColorStop(1, 'rgba(185,152,82,0.95)');
+    ctx.fillStyle = sGrad;
+    ctx.fillRect(0, sandY, width, height - sandY);
+ 
+    // Sand mound / castle
+    if (moundH > 3) {
+      const mx  = width * 0.5;
+      const mw  = width * 0.22;
+      ctx.beginPath();
+      ctx.moveTo(mx - mw, sandY);
+      ctx.bezierCurveTo(mx - mw * 0.65, sandY, mx - mw * 0.25, sandY - moundH, mx, sandY - moundH);
+      ctx.bezierCurveTo(mx + mw * 0.25, sandY - moundH, mx + mw * 0.65, sandY, mx + mw, sandY);
+      ctx.closePath();
+      const mgGrad = ctx.createLinearGradient(0, sandY - moundH, 0, sandY);
+      mgGrad.addColorStop(0, 'rgba(215,182,112,0.98)');
+      mgGrad.addColorStop(1, 'rgba(195,162,92,0.9)');
+      ctx.fillStyle = mgGrad;
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(160,130,68,0.45)';
+      ctx.lineWidth = 1; ctx.stroke();
+    }
+ 
+    // Settled sand grains
+    grains.filter(g => g.settled).forEach(g => {
+      ctx.fillStyle = 'rgba(200,168,96,0.65)';
+      ctx.beginPath(); ctx.arc(g.x, g.y, g.r, 0, TAU); ctx.fill();
+    });
+ 
+    // Water caustics
+    for (let i = 0; i < 6; i++) {
+      const cx = width * (0.08 + i * 0.17);
+      const cy = height * 0.12 + Math.sin(time * 0.45 + i * 1.1) * 7;
+      const cr = 12 + Math.sin(time * 0.7 + i * 0.9) * 4;
+      ctx.strokeStyle = 'rgba(100,168,255,0.10)';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath(); ctx.arc(cx, cy, cr, 0, TAU); ctx.stroke();
+    }
+ 
+    // Fish trails
+    fish.forEach(f => {
+      if (f.trail.length < 2) return;
+      ctx.beginPath();
+      ctx.moveTo(f.trail[0].x, f.trail[0].y);
+      f.trail.forEach(p => ctx.lineTo(p.x, p.y));
+      ctx.strokeStyle = f.isMale ? 'rgba(44,95,246,0.12)' : 'rgba(100,145,220,0.10)';
+      ctx.lineWidth = f.bodyLen * 0.28;
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.stroke();
+    });
+ 
+    // Airborne grains
+    grains.filter(g => !g.settled).forEach(g => {
+      ctx.fillStyle = 'rgba(200,168,96,0.55)';
+      ctx.beginPath(); ctx.arc(g.x, g.y, g.r, 0, TAU); ctx.fill();
+    });
+ 
+    // Fish (depth-sorted, further first)
+    fish.slice().sort((a, b) => a.y - b.y).forEach(f => {
+      // Courtship display ring
+      if (f.state === 'court') {
+        const pulse = 0.35 + 0.25 * Math.sin(time * 3.5);
+        ctx.globalAlpha = pulse;
+        ctx.strokeStyle = 'rgba(184,242,0,0.85)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(f.x, f.y, f.bodyLen * 1.5, 0, TAU); ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+      drawFish(ctx, f);
+    });
+  }
+ 
+  return { reset, update, draw };
+}
+
 function createAnimator(type, rng) {
   if (type === "gene") return createSpatialGenomicsAnimator(rng);
   if (type === "cyto") return createCytoskeletonAnimator(rng);
   if (type === "network") return createSciMLAnimator(rng);
   if (type === "unified") return createUnifiedAnimator(rng);
+  if (type === "division")  return createCellDivisionAnimator(rng);
+  if (type === "chromatin") return createChromatinAnimator(rng);
+  if (type === "cichlid")   return createCichlidAnimator(rng);
   return null;
 }
 
