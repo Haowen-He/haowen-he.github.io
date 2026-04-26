@@ -976,3 +976,72 @@ html.lowpower .orb {
 .gt-logo-link:hover svg .cls-2 {
   fill: #b2a268 !important;
 }
+
+.email-pill {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  color: #101a5b;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(44, 95, 246, 0.28);
+  box-shadow: 0 1px 3px rgba(16, 26, 91, 0.06);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  user-select: text;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Cascadia Mono', ui-monospace, monospace;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: inherit;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.email-pill:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(184, 242, 0, 0.7);
+  box-shadow:
+    0 4px 12px rgba(44, 95, 246, 0.12),
+    0 0 0 2px rgba(184, 242, 0, 0.14);
+}
+.email-pill:focus-visible {
+  outline: none;
+  border-color: rgba(184, 242, 0, 0.85);
+  box-shadow:
+    0 0 0 3px rgba(184, 242, 0, 0.32),
+    0 3px 10px rgba(16, 26, 91, 0.08);
+}
+
+.email-pill::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2c5ff6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  line-height: 1.1;
+  max-width: 4.5rem;
+  text-align: left;
+  white-space: normal;
+}
+.email-pill.revealed::after {
+  content: "click to copy";
+  opacity: 0.85;
+}
+@media (hover: none) {
+  .email-pill.revealed::after { content: "tap to copy"; }
+}
